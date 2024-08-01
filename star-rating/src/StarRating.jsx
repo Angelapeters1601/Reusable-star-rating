@@ -1,5 +1,6 @@
-import Star from "./Star";
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+import Star from "./Star";
 
 const containerStyle = {
   display: "flex",
@@ -9,6 +10,18 @@ const containerStyle = {
 
 const starContainerStyle = {
   display: "flex",
+};
+
+// specifying proptypes -(isRequired can be chained to ensure validation):
+// There are also PropTypes.bool and .object
+StarRating.PropTypes = {
+  maxRating: PropTypes.number,
+  defaultRating: PropTypes.number,
+  size: PropTypes.number,
+  color: PropTypes.string,
+  messages: PropTypes.array,
+  className: PropTypes.string,
+  onSetRating: PropTypes.func,
 };
 
 function StarRating({
